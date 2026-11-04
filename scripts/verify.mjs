@@ -24,6 +24,11 @@ for (const id of ['san_francisco', 'helsinki']) {
     assert.ok(place.images[state], `Missing ${id} capture: ${state}`);
   }
 }
+const winter = places.find(place => place.id === 'stockholm');
+for (const state of ['opening', 'day', 'night', 'north', 'east', 'south', 'west']) {
+  assert.ok(winter.images[`winter_${state}`], `Missing Stockholm winter ${state}`);
+  assert.notEqual(winter.images[`winter_${state}`], winter.images[state]);
+}
 for (const place of places) {
   for (const [state, url] of Object.entries(place.images)) {
     const response = await request(url);
@@ -38,4 +43,4 @@ assert.equal((await request('/', 'POST')).status, 405);
 assert.equal((await request('/', 'HEAD')).status, 200);
 assert.equal(await (await request('/', 'HEAD')).text(), '');
 assert.deepEqual(JSON.parse(await readFile(path.join(root, '.openai/hosting.json'), 'utf8')), JSON.parse(await readFile(path.join(root, 'dist/.openai/hosting.json'), 'utf8')));
-console.log('PASS: Worker routes, all HTML assets, 43 scene captures, JPEG bytes, request methods, security headers, and hosting metadata.');
+console.log('PASS: Worker routes, all HTML assets, 49 scene captures, JPEG bytes, request methods, security headers, and hosting metadata.');

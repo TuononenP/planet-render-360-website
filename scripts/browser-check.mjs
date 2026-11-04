@@ -54,7 +54,7 @@ const origin = `http://127.0.0.1:${server.address().port}`;
   await page.locator('#place-search').fill('');
   await page.getByRole('button',{name:'See Stockholm in winter',exact:true}).click();
   if(!await page.locator('#viewer-image').getAttribute('src').then(x=>x.includes('winter')))throw Error('winter failed');
-  if(!await page.locator('#timelapse').isDisabled())throw Error('unavailable winter light controls should be disabled');
+  if(await page.locator('#timelapse').isDisabled())throw Error('winter time-lapse should be available');
   await page.getByRole('button',{name:'Summer',exact:true}).click();
   await page.getByRole('button',{name:'Time-lapse',exact:true}).click();
   if(await page.locator('#timelapse').getAttribute('aria-pressed')!=='true')throw Error('time lapse failed');
@@ -73,6 +73,34 @@ const origin = `http://127.0.0.1:${server.address().port}`;
   await mobile.getByRole('button',{name:'Expand view controls',exact:true}).click();
   await mobile.getByRole('button',{name:'Close preview',exact:true}).click();
   for (const target of [page, mobile]) {
+    await target.goto(`${origin}/?place=stockholm&season=winter`, {waitUntil:'networkidle'});
+    for (const state of ['day', 'night', 'opening']) {
+      const button = target.locator(`[data-time="${state}"]`);
+      if(await button.isDisabled())throw Error(`Winter ${state} is disabled`);
+      await button.click();
+      await target.waitForFunction(() => {
+        const image = document.querySelector('#viewer-image');
+        return image.complete && image.naturalWidth > 0;
+      });
+      if(!await target.locator('#viewer-image').getAttribute('src').then(src=>src.endsWith(`stockholm-winter-${state}.jpg`)))throw Error(`Winter ${state} capture failed`);
+    }
+    await target.locator('#timelapse').click();
+    await target.waitForFunction(()=>document.querySelector('#viewer-image').getAttribute('src').endsWith('stockholm-winter-night.jpg'), null, {timeout:7000});
+    await target.locator('#timelapse').click();
+    if(await target.locator('#timelapse').getAttribute('aria-pressed')!=='false')throw Error('Winter time-lapse did not pause');
+    await target.reload({waitUntil:'networkidle'});
+    if(!await target.locator('#viewer-image').getAttribute('src').then(src=>src.endsWith('stockholm-winter-night.jpg')))throw Error('Winter time deep link was not restored');
+    await target.screenshot({path:review + `winter-night-${target.viewportSize().width}.png`});
+    await target.locator('#next-direction').click();
+    if(!await target.locator('#viewer-image').getAttribute('src').then(src=>src.endsWith('stockholm-winter-north.jpg')))throw Error('Winter direction failed');
+    await target.reload({waitUntil:'networkidle'});
+    if(!await target.locator('#viewer-image').getAttribute('src').then(src=>src.endsWith('stockholm-winter-north.jpg')))throw Error('Winter direction deep link was not restored');
+    const winterDownloadPromise = target.waitForEvent('download');
+    await target.locator('#photo-button').click();
+    if((await winterDownloadPromise).suggestedFilename()!=='planet-render-360-stockholm-winter-north.jpg')throw Error('Winter photo download failed');
+    await target.locator('[data-season-choice="summer"]').click();
+    if(!await target.locator('#viewer-image').getAttribute('src').then(src=>src.endsWith('stockholm-opening.jpg')))throw Error('Summer switch did not restore summer capture');
+    await target.locator('#close-explorer').click();
     for (const [id, name] of [['san_francisco', 'San Francisco'], ['helsinki', 'Helsinki']]) {
       await target.goto(`${origin}/?place=${id}`, {waitUntil:'networkidle'});
       if(await target.locator('#viewer-title').textContent()!==name)throw Error(`${name} deep link failed`);
@@ -95,7 +123,7 @@ const origin = `http://127.0.0.1:${server.address().port}`;
     }
   }
   if(errors.length)throw Error(errors.join('\n'));
-  console.log('PASS: desktop and phone layout, opening/closing, day/night, directions, favourites/persistence, photo download, guided tour, deep links, search/empty state, winter, time-lapse, collapsing panels, San Francisco and Helsinki captures; no browser errors.');
+  console.log('PASS: desktop and phone layout, opening/closing, day/night, directions, favourites/persistence, photo download, guided tour, deep links, search/empty state, winter lighting/directions/time-lapse/photo, collapsing panels, San Francisco and Helsinki captures; no browser errors.');
   console.log('Deep link restored correctly after reload.');
   await browser.close();
   server.close();

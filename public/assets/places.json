@@ -33,7 +33,13 @@
       "east": "/assets/stockholm-east.jpg",
       "south": "/assets/stockholm-south.jpg",
       "west": "/assets/stockholm-west.jpg",
-      "winter": "/assets/stockholm-winter.jpg"
+      "winter_opening": "/assets/stockholm-winter-opening.jpg",
+      "winter_day": "/assets/stockholm-winter-day.jpg",
+      "winter_night": "/assets/stockholm-winter-night.jpg",
+      "winter_north": "/assets/stockholm-winter-north.jpg",
+      "winter_east": "/assets/stockholm-winter-east.jpg",
+      "winter_south": "/assets/stockholm-winter-south.jpg",
+      "winter_west": "/assets/stockholm-winter-west.jpg"
     }
   },
   {

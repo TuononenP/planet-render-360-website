@@ -187,8 +187,8 @@ function updateURL() {
   history.replaceState(null, '', url);
 }
 function imagePath() {
-  if (season === 'winter') return current.images.winter;
-  return current.images[direction === 'opening' ? light : direction];
+  const key = direction === 'opening' ? light : direction;
+  return current.images[season === 'winter' ? `winter_${key}` : key];
 }
 function renderView() {
   viewImage.src = imagePath();
@@ -201,28 +201,24 @@ function renderView() {
   $('#direction-name').textContent = direction === 'opening' ? 'Opening view' : `${direction[0].toUpperCase()}${direction.slice(1)} view`;
   $$('[data-time]').forEach(button => {
     button.setAttribute('aria-pressed', button.dataset.time === light);
-    button.disabled = season === 'winter';
+    button.disabled = !current.images[season === 'winter' ? `winter_${button.dataset.time}` : button.dataset.time];
   });
-  $('#timelapse').disabled = season === 'winter';
-  $('#season-control').hidden = !current.images.winter;
+  $('#timelapse').disabled = !['opening', 'day', 'night'].every(key => current.images[season === 'winter' ? `winter_${key}` : key]);
+  $('#season-control').hidden = !current.images.winter_opening;
   $$('[data-season-choice]').forEach(button => button.setAttribute('aria-pressed', button.dataset.seasonChoice === season));
-  $('#previous-direction').disabled = season === 'winter';
-  $('#next-direction').disabled = season === 'winter';
   $('#panel-title').textContent = season === 'winter' ? 'A winter kind of quiet.' : light === 'night' ? 'After the light fades.' : 'A moment in the light.';
-  $('#preview-hint').textContent = season === 'winter'
-    ? 'Winter opening view. Switch to summer to try the captured light changes and directions.'
-    : 'Try the captured light changes. In the app, choose any time with the sun arc.';
+  $('#preview-hint').textContent = 'Try the captured light changes or play time-lapse. In the app, choose any time with the sun arc.';
   $('#info-title').textContent = current.spot;
   $('#info-copy').textContent = placeStories[current.id];
-  $('#drag-prompt').style.opacity = season === 'winter' ? '0' : '1';
+  $('#drag-prompt').style.opacity = '1';
   syncSaveButton();
   updateURL();
 }
 function openExplorer(id, requestedSeason = 'summer', opener, state = {}) {
   current = places.find(place => place.id === id) || places[0];
-  season = requestedSeason === 'winter' && current.images.winter ? 'winter' : 'summer';
+  season = requestedSeason === 'winter' && current.images.winter_opening ? 'winter' : 'summer';
   light = ['opening', 'day', 'night'].includes(state.light) ? state.light : 'opening';
-  direction = directions.includes(state.direction) && season !== 'winter' ? state.direction : 'opening';
+  direction = directions.includes(state.direction) ? state.direction : 'opening';
   lastOpener = opener || document.activeElement;
   $('#view-info').hidden = true;
   $('#info-button').setAttribute('aria-pressed', 'false');
@@ -286,7 +282,6 @@ $('#timelapse').addEventListener('click', () => {
   notify('Playing three captured moments. Pause at any time.');
 });
 function changeDirection(offset) {
-  if (season === 'winter') return;
   stopTimeLapse();
   light = 'opening';
   direction = directions[(directions.indexOf(direction) + offset + directions.length) % directions.length];

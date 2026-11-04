@@ -56,10 +56,6 @@
     "source": "visual-plan/reviews/vessel-harbours-ultra-2026-11-04/stockholm_h270.jpg"
   },
   {
-    "asset": "stockholm-winter.jpg",
-    "source": "visual-plan/reviews/vessel-harbours-ultra-winter-2026-11-04/stockholm_vantage.jpg"
-  },
-  {
     "asset": "paris-opening.jpg",
     "source": "visual-plan/reviews/realism-v3-baseline-2026-11-03/paris_vantage.jpg"
   },
@@ -198,5 +194,47 @@
   {
     "asset": "showcase-video-qr.svg",
     "source": "QR code for https://www.youtube.com/watch?v=OoHPGmX0qwg"
+  },
+  {
+    "asset": "stockholm-winter-opening.jpg",
+    "source": "visual-plan/reviews/website-stockholm-winter-2026-11-04/stockholm_vantage.jpg",
+    "preview_width": 960,
+    "jpeg_quality": 78
+  },
+  {
+    "asset": "stockholm-winter-day.jpg",
+    "source": "visual-plan/reviews/website-stockholm-winter-2026-11-04/stockholm_vantage_noon.jpg",
+    "preview_width": 960,
+    "jpeg_quality": 78
+  },
+  {
+    "asset": "stockholm-winter-night.jpg",
+    "source": "visual-plan/reviews/website-stockholm-winter-2026-11-04/stockholm_vantage_night.jpg",
+    "preview_width": 960,
+    "jpeg_quality": 78
+  },
+  {
+    "asset": "stockholm-winter-north.jpg",
+    "source": "visual-plan/reviews/website-stockholm-winter-2026-11-04/stockholm_h000.jpg",
+    "preview_width": 960,
+    "jpeg_quality": 78
+  },
+  {
+    "asset": "stockholm-winter-east.jpg",
+    "source": "visual-plan/reviews/website-stockholm-winter-2026-11-04/stockholm_h090.jpg",
+    "preview_width": 960,
+    "jpeg_quality": 78
+  },
+  {
+    "asset": "stockholm-winter-south.jpg",
+    "source": "visual-plan/reviews/website-stockholm-winter-2026-11-04/stockholm_h180.jpg",
+    "preview_width": 960,
+    "jpeg_quality": 78
+  },
+  {
+    "asset": "stockholm-winter-west.jpg",
+    "source": "visual-plan/reviews/website-stockholm-winter-2026-11-04/stockholm_h270.jpg",
+    "preview_width": 960,
+    "jpeg_quality": 78
   }
 ]
