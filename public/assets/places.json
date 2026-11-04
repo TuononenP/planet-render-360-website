@@ -1,0 +1,75 @@
+[
+  {
+    "id": "new_york",
+    "name": "New York",
+    "country": "United States",
+    "spot": "Brooklyn Bridge Park",
+    "lat": 40.70265,
+    "lon": -73.99686,
+    "bearing": 295,
+    "images": {
+      "opening": "/assets/new_york-opening.jpg",
+      "day": "/assets/new_york-day.jpg",
+      "night": "/assets/new_york-night.jpg",
+      "north": "/assets/new_york-north.jpg",
+      "east": "/assets/new_york-east.jpg",
+      "south": "/assets/new_york-south.jpg",
+      "west": "/assets/new_york-west.jpg"
+    }
+  },
+  {
+    "id": "stockholm",
+    "name": "Stockholm",
+    "country": "Sweden",
+    "spot": "Monteliusv\u00e4gen",
+    "lat": 59.3207,
+    "lon": 18.0604,
+    "bearing": 10,
+    "images": {
+      "opening": "/assets/stockholm-opening.jpg",
+      "day": "/assets/stockholm-day.jpg",
+      "night": "/assets/stockholm-night.jpg",
+      "north": "/assets/stockholm-north.jpg",
+      "east": "/assets/stockholm-east.jpg",
+      "south": "/assets/stockholm-south.jpg",
+      "west": "/assets/stockholm-west.jpg",
+      "winter": "/assets/stockholm-winter.jpg"
+    }
+  },
+  {
+    "id": "paris",
+    "name": "Paris",
+    "country": "France",
+    "spot": "Palais de Chaillot",
+    "lat": 48.8622,
+    "lon": 2.2887,
+    "bearing": 142,
+    "images": {
+      "opening": "/assets/paris-opening.jpg",
+      "day": "/assets/paris-day.jpg",
+      "night": "/assets/paris-night.jpg",
+      "north": "/assets/paris-north.jpg",
+      "east": "/assets/paris-east.jpg",
+      "south": "/assets/paris-south.jpg",
+      "west": "/assets/paris-west.jpg"
+    }
+  },
+  {
+    "id": "banff",
+    "name": "Banff",
+    "country": "Canada",
+    "spot": "Bow River",
+    "lat": 51.1676,
+    "lon": -115.5596,
+    "bearing": 205,
+    "images": {
+      "opening": "/assets/banff-opening.jpg",
+      "day": "/assets/banff-day.jpg",
+      "night": "/assets/banff-night.jpg",
+      "north": "/assets/banff-north.jpg",
+      "east": "/assets/banff-east.jpg",
+      "south": "/assets/banff-south.jpg",
+      "west": "/assets/banff-west.jpg"
+    }
+  }
+]

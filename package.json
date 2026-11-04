@@ -1,0 +1,14 @@
+{
+  "name": "planet-render-360-showcase",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/verify.mjs",
+    "test:browser": "node scripts/browser-check.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.64.1"
+  }
+}

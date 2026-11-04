@@ -1,0 +1,138 @@
+[
+  {
+    "asset": "new_york-opening.jpg",
+    "source": "visual-plan/reviews/vessel-harbours-ultra-2026-11-04/new_york_vantage.jpg"
+  },
+  {
+    "asset": "new_york-day.jpg",
+    "source": "visual-plan/reviews/vessel-harbours-ultra-2026-11-04/new_york_vantage_noon.jpg"
+  },
+  {
+    "asset": "new_york-night.jpg",
+    "source": "visual-plan/reviews/realism-v3-baseline-2026-11-03/new_york_vantage_night.jpg"
+  },
+  {
+    "asset": "new_york-north.jpg",
+    "source": "visual-plan/reviews/vessel-harbours-ultra-2026-11-04/new_york_h000.jpg"
+  },
+  {
+    "asset": "new_york-east.jpg",
+    "source": "visual-plan/reviews/vessel-harbours-ultra-2026-11-04/new_york_h090.jpg"
+  },
+  {
+    "asset": "new_york-south.jpg",
+    "source": "visual-plan/reviews/vessel-harbours-ultra-2026-11-04/new_york_h180.jpg"
+  },
+  {
+    "asset": "new_york-west.jpg",
+    "source": "visual-plan/reviews/vessel-harbours-ultra-2026-11-04/new_york_h270.jpg"
+  },
+  {
+    "asset": "stockholm-opening.jpg",
+    "source": "visual-plan/reviews/vessel-harbours-ultra-2026-11-04/stockholm_vantage.jpg"
+  },
+  {
+    "asset": "stockholm-day.jpg",
+    "source": "visual-plan/reviews/vessel-harbours-ultra-2026-11-04/stockholm_vantage_noon.jpg"
+  },
+  {
+    "asset": "stockholm-night.jpg",
+    "source": "visual-plan/reviews/realism-v3-baseline-2026-11-03/stockholm_vantage_night.jpg"
+  },
+  {
+    "asset": "stockholm-north.jpg",
+    "source": "visual-plan/reviews/vessel-harbours-ultra-2026-11-04/stockholm_h000.jpg"
+  },
+  {
+    "asset": "stockholm-east.jpg",
+    "source": "visual-plan/reviews/vessel-harbours-ultra-2026-11-04/stockholm_h090.jpg"
+  },
+  {
+    "asset": "stockholm-south.jpg",
+    "source": "visual-plan/reviews/vessel-harbours-ultra-2026-11-04/stockholm_h180.jpg"
+  },
+  {
+    "asset": "stockholm-west.jpg",
+    "source": "visual-plan/reviews/vessel-harbours-ultra-2026-11-04/stockholm_h270.jpg"
+  },
+  {
+    "asset": "stockholm-winter.jpg",
+    "source": "visual-plan/reviews/vessel-harbours-ultra-winter-2026-11-04/stockholm_vantage.jpg"
+  },
+  {
+    "asset": "paris-opening.jpg",
+    "source": "visual-plan/reviews/realism-v3-baseline-2026-11-03/paris_vantage.jpg"
+  },
+  {
+    "asset": "paris-day.jpg",
+    "source": "visual-plan/reviews/realism-v3-baseline-2026-11-03/paris_vantage_noon.jpg"
+  },
+  {
+    "asset": "paris-night.jpg",
+    "source": "visual-plan/reviews/realism-v3-baseline-2026-11-03/paris_vantage_night.jpg"
+  },
+  {
+    "asset": "paris-north.jpg",
+    "source": "visual-plan/reviews/realism-v3-baseline-2026-11-03/paris_h000.jpg"
+  },
+  {
+    "asset": "paris-east.jpg",
+    "source": "visual-plan/reviews/realism-v3-baseline-2026-11-03/paris_h090.jpg"
+  },
+  {
+    "asset": "paris-south.jpg",
+    "source": "visual-plan/reviews/realism-v3-baseline-2026-11-03/paris_h180.jpg"
+  },
+  {
+    "asset": "paris-west.jpg",
+    "source": "visual-plan/reviews/realism-v3-baseline-2026-11-03/paris_h270.jpg"
+  },
+  {
+    "asset": "banff-opening.jpg",
+    "source": "visual-plan/reviews/realism-v3-baseline-2026-11-03/banff_vantage.jpg"
+  },
+  {
+    "asset": "banff-day.jpg",
+    "source": "visual-plan/reviews/realism-v3-baseline-2026-11-03/banff_vantage_noon.jpg"
+  },
+  {
+    "asset": "banff-night.jpg",
+    "source": "visual-plan/reviews/realism-v3-baseline-2026-11-03/banff_vantage_night.jpg"
+  },
+  {
+    "asset": "banff-north.jpg",
+    "source": "visual-plan/reviews/realism-v3-baseline-2026-11-03/banff_h000.jpg"
+  },
+  {
+    "asset": "banff-east.jpg",
+    "source": "visual-plan/reviews/realism-v3-baseline-2026-11-03/banff_h090.jpg"
+  },
+  {
+    "asset": "banff-south.jpg",
+    "source": "visual-plan/reviews/realism-v3-baseline-2026-11-03/banff_h180.jpg"
+  },
+  {
+    "asset": "banff-west.jpg",
+    "source": "visual-plan/reviews/realism-v3-baseline-2026-11-03/banff_h270.jpg"
+  },
+  {
+    "asset": "picker.jpg",
+    "source": "docs/images/01-picker-phone.jpg"
+  },
+  {
+    "asset": "loading.jpg",
+    "source": "docs/images/02-loading-phone.jpg"
+  },
+  {
+    "asset": "viewer.jpg",
+    "source": "docs/images/05-view360-interlaken-phone.jpg"
+  },
+  {
+    "asset": "history.jpg",
+    "source": "docs/images/04b-history-desktop.jpg"
+  },
+  {
+    "asset": "tools.jpg",
+    "source": "docs/images/07-viewer-tools-desktop.jpg"
+  }
+]
