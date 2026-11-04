@@ -9,7 +9,7 @@ cd planet-render-360-website
 npm run dev
 ```
 
-Open <http://localhost:4173>. The site has no runtime dependencies or external network calls. Six destination previews offer captured directions, light changes, a Stockholm winter view, browser-local favourites, photo downloads, shareable showcase links, and a guided tour. The journey and toolkit sections show actual app screens.
+Open <http://localhost:4173>. The site has no runtime dependencies or external network calls. Six destination previews offer captured directions, light changes, a Stockholm winter view, browser-local favourites, photo downloads, shareable showcase links, and a guided tour. The journey and toolkit sections show actual app screens. The showcase video opens on YouTube through a preview card or QR code; its thumbnail and QR image are served locally, with no embedded player.
 
 The browser preview uses existing app captures; it does not run the Godot renderer. Free movement, live search and weather, calendar controls, drone mode, and offline downloads are described as features of the app. Shared website links reopen the captured preview; they are separate from the app’s `pr360://` links.
 
