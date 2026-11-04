@@ -1,7 +1,7 @@
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 const [places, icons] = await Promise.all([
-  fetch('/assets/places.json').then(response => response.json()),
+  fetch('/assets/places.json', { cache: 'no-store' }).then(response => response.json()),
   fetch('/assets/icons.json').then(response => response.json()),
 ]);
 const iconFallbacks = {
