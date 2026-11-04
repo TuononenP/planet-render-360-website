@@ -41,6 +41,8 @@ const placeStories = {
   new_york: 'Stand by the East River and look across to Lower Manhattan. This opening viewpoint is set at Brooklyn Bridge Park, with the skyline across the water.',
   stockholm: 'Look out from Monteliusvägen over the water to Stockholm’s rooftops. Try the winter capture for a different view of the same waterfront.',
   paris: 'A classic first look across the gardens toward the Eiffel Tower. The app brings recognizable landmarks into the surrounding city scene.',
+  san_francisco: 'Look down Hyde Street from Lombard Street toward the bay. The stepped streets and homes frame the opening view from Russian Hill.',
+  helsinki: 'Look across South Harbour toward Helsinki’s waterfront and cathedral landmarks. The opening viewpoint sits by the water.',
   banff: 'Follow the Bow River into a landscape of wooded banks and mountain ridges. Real elevation data gives the terrain its shape.',
 };
 function coordinate(value, positive, negative) {
@@ -348,7 +350,7 @@ $('#info-button').addEventListener('click', () => {
 });
 $('#close-info').addEventListener('click', closeInfo);
 const tour = [
-  { title: 'Arrive somewhere new.', copy: 'In the app, tap the map or search for a place to build a view. Here, you’re exploring real captures from four destinations.' },
+  { title: 'Arrive somewhere new.', copy: 'In the app, tap the map or search for a place to build a view. Here, you’re exploring real captures from six destinations.' },
   { title: 'Turn toward your curiosity.', copy: 'Drag the scene or use the direction arrows to browse captured viewpoints. In the app, look freely, walk the ground, or fly a drone.' },
   { title: 'Find your favourite light.', copy: 'Try Midday, Opening light, and Night. The app’s sun arc lets you choose any time. Stockholm also has a winter preview here.' },
   { title: 'Take a little of it with you.', copy: 'Use Save photo for a capture, copy a showcase view link, or star this place to keep it in your browser’s favourites.' },

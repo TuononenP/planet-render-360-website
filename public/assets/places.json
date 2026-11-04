@@ -71,5 +71,41 @@
       "south": "/assets/banff-south.jpg",
       "west": "/assets/banff-west.jpg"
     }
+  },
+  {
+    "id": "san_francisco",
+    "name": "San Francisco",
+    "country": "United States",
+    "spot": "Hyde & Lombard",
+    "lat": 37.80195,
+    "lon": -122.4196,
+    "bearing": 352,
+    "images": {
+      "opening": "/assets/san_francisco-opening.jpg",
+      "day": "/assets/san_francisco-day.jpg",
+      "night": "/assets/san_francisco-night.jpg",
+      "north": "/assets/san_francisco-north.jpg",
+      "east": "/assets/san_francisco-east.jpg",
+      "south": "/assets/san_francisco-south.jpg",
+      "west": "/assets/san_francisco-west.jpg"
+    }
+  },
+  {
+    "id": "helsinki",
+    "name": "Helsinki",
+    "country": "Finland",
+    "spot": "South Harbour",
+    "lat": 60.1657,
+    "lon": 24.9558,
+    "bearing": 5,
+    "images": {
+      "opening": "/assets/helsinki-opening.jpg",
+      "day": "/assets/helsinki-day.jpg",
+      "night": "/assets/helsinki-night.jpg",
+      "north": "/assets/helsinki-north.jpg",
+      "east": "/assets/helsinki-east.jpg",
+      "south": "/assets/helsinki-south.jpg",
+      "west": "/assets/helsinki-west.jpg"
+    }
   }
 ]

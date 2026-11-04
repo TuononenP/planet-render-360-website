@@ -16,7 +16,14 @@ for (const match of html.matchAll(/(?:src|href)="(\/[^"?#]+)"/g)) {
   assert.equal((await request(match[1])).status, 200, `Missing HTML asset: ${match[1]}`);
 }
 const places = await (await request('/assets/places.json')).json();
-assert.equal(places.length, 4);
+assert.equal(places.length, 6);
+for (const id of ['san_francisco', 'helsinki']) {
+  const place = places.find(item => item.id === id);
+  assert.ok(place, `Missing destination: ${id}`);
+  for (const state of ['opening', 'day', 'night', 'north', 'east', 'south', 'west']) {
+    assert.ok(place.images[state], `Missing ${id} capture: ${state}`);
+  }
+}
 for (const place of places) {
   for (const [state, url] of Object.entries(place.images)) {
     const response = await request(url);
@@ -31,4 +38,4 @@ assert.equal((await request('/', 'POST')).status, 405);
 assert.equal((await request('/', 'HEAD')).status, 200);
 assert.equal(await (await request('/', 'HEAD')).text(), '');
 assert.deepEqual(JSON.parse(await readFile(path.join(root, '.openai/hosting.json'), 'utf8')), JSON.parse(await readFile(path.join(root, 'dist/.openai/hosting.json'), 'utf8')));
-console.log('PASS: Worker routes, all HTML assets, 29 scene captures, JPEG bytes, request methods, security headers, and hosting metadata.');
+console.log('PASS: Worker routes, all HTML assets, 43 scene captures, JPEG bytes, request methods, security headers, and hosting metadata.');

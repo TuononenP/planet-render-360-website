@@ -134,5 +134,61 @@
   {
     "asset": "tools.jpg",
     "source": "docs/images/07-viewer-tools-desktop.jpg"
+  },
+  {
+    "asset": "san_francisco-opening.jpg",
+    "source": "visual-plan/reviews/website-sf-helsinki-2026-11-04/san_francisco_vantage.jpg"
+  },
+  {
+    "asset": "san_francisco-day.jpg",
+    "source": "visual-plan/reviews/website-sf-helsinki-2026-11-04/san_francisco_vantage_noon.jpg"
+  },
+  {
+    "asset": "san_francisco-night.jpg",
+    "source": "visual-plan/reviews/website-sf-helsinki-2026-11-04/san_francisco_vantage_night.jpg"
+  },
+  {
+    "asset": "san_francisco-north.jpg",
+    "source": "visual-plan/reviews/website-sf-helsinki-2026-11-04/san_francisco_h000.jpg"
+  },
+  {
+    "asset": "san_francisco-east.jpg",
+    "source": "visual-plan/reviews/website-sf-helsinki-2026-11-04/san_francisco_h090.jpg"
+  },
+  {
+    "asset": "san_francisco-south.jpg",
+    "source": "visual-plan/reviews/website-sf-helsinki-2026-11-04/san_francisco_h180.jpg"
+  },
+  {
+    "asset": "san_francisco-west.jpg",
+    "source": "visual-plan/reviews/website-sf-helsinki-2026-11-04/san_francisco_h270.jpg"
+  },
+  {
+    "asset": "helsinki-opening.jpg",
+    "source": "visual-plan/reviews/website-sf-helsinki-2026-11-04/helsinki_vantage.jpg"
+  },
+  {
+    "asset": "helsinki-day.jpg",
+    "source": "visual-plan/reviews/website-sf-helsinki-2026-11-04/helsinki_vantage_noon.jpg"
+  },
+  {
+    "asset": "helsinki-night.jpg",
+    "source": "visual-plan/reviews/website-sf-helsinki-2026-11-04/helsinki_vantage_night.jpg"
+  },
+  {
+    "asset": "helsinki-north.jpg",
+    "source": "visual-plan/reviews/website-sf-helsinki-2026-11-04/helsinki_h000.jpg"
+  },
+  {
+    "asset": "helsinki-east.jpg",
+    "source": "visual-plan/reviews/website-sf-helsinki-2026-11-04/helsinki_h090.jpg"
+  },
+  {
+    "asset": "helsinki-south.jpg",
+    "source": "visual-plan/reviews/website-sf-helsinki-2026-11-04/helsinki_h180.jpg"
+  },
+  {
+    "asset": "helsinki-west.jpg",
+    "source": "visual-plan/reviews/website-sf-helsinki-2026-11-04/helsinki_h270.jpg"
   }
 ]

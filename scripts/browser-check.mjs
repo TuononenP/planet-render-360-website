@@ -72,8 +72,30 @@ const origin = `http://127.0.0.1:${server.address().port}`;
   if(!await mobile.locator('#panel-controls').isHidden())throw Error('collapse failed');
   await mobile.getByRole('button',{name:'Expand view controls',exact:true}).click();
   await mobile.getByRole('button',{name:'Close preview',exact:true}).click();
+  for (const target of [page, mobile]) {
+    for (const [id, name] of [['san_francisco', 'San Francisco'], ['helsinki', 'Helsinki']]) {
+      await target.goto(`${origin}/?place=${id}`, {waitUntil:'networkidle'});
+      if(await target.locator('#viewer-title').textContent()!==name)throw Error(`${name} deep link failed`);
+      await target.screenshot({path:review + `${id}-${target.viewportSize().width}.png`});
+      for (const state of ['opening', 'day', 'night']) {
+        await target.locator(`[data-time="${state}"]`).click();
+        await target.waitForFunction(() => {
+          const image = document.querySelector('#viewer-image');
+          return image.complete && image.naturalWidth > 0;
+        });
+        if(!await target.locator('#viewer-image').getAttribute('src').then(src=>src.includes(`${id}-${state}.jpg`)))throw Error(`${name} ${state} capture failed`);
+      }
+      await target.locator('#info-button').click();
+      if(!(await target.locator('#info-copy').textContent()).trim())throw Error(`${name} story missing`);
+      await target.locator('#close-info').click();
+      await target.locator('#next-direction').click();
+      if(await target.locator('#direction-name').textContent()!=='North view')throw Error(`${name} direction failed`);
+      if(await target.evaluate(()=>document.querySelector('#viewer').scrollWidth>innerWidth))throw Error(`${name} preview overflows`);
+      await target.locator('#close-explorer').click();
+    }
+  }
   if(errors.length)throw Error(errors.join('\n'));
-  console.log('PASS: desktop and phone layout, opening/closing, day/night, directions, favourites/persistence, photo download, guided tour, deep links, search/empty state, winter, time-lapse, collapsing panels; no browser errors.');
+  console.log('PASS: desktop and phone layout, opening/closing, day/night, directions, favourites/persistence, photo download, guided tour, deep links, search/empty state, winter, time-lapse, collapsing panels, San Francisco and Helsinki captures; no browser errors.');
   console.log('Deep link restored correctly after reload.');
   await browser.close();
   server.close();
