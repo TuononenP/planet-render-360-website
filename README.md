@@ -29,7 +29,7 @@ The Worker checks verify routes, assets, request methods, security headers, imag
 
 `npm run build` creates `dist/server/index.js` and `dist/.openai/hosting.json`. The Worker embeds the static assets so the output needs no external asset service, database, secrets, or build dependencies.
 
-Create the Site once, then atomically merge its exact returned `project_id` into `.openai/hosting.json`. The contents of this repository are the website source. Push the reviewed source to the Site’s source repository, rebuild from that commit, and package the contents of `dist/` as a tar archive. Save and deploy that exact pushed commit with the archive through Sites. New Sites remain private unless the owner requests a different audience.
+Create the Site once, then atomically merge its exact returned `project_id` into `.openai/hosting.json`. The contents of this repository are the website source. Push the reviewed source to the Site’s source repository, rebuild from that commit, and run `npm run package` to create `site.tar.gz`. The archive includes `.openai/hosting.json` and `dist/server/index.js` at their required paths. Save and deploy that exact pushed commit with the archive through Sites. New Sites remain private unless the owner requests a different audience.
 
 Source repository: <https://github.com/TuononenP/planet-render-360-website>.
 
