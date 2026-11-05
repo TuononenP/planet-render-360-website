@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#0b1019">
-  <meta name="description" content="Pick a place. Step into its world. Explore Planet Render 360 through real app captures and an interactive tour of its tools.">
-  <title>Planet Render 360 — A world around every point</title>
+  <meta name="description" content="Planet Render 360 builds a 3D, 360° view of any point on Earth from real elevation, satellite imagery and OpenStreetMap data. Look around captured scenes from the app in your browser.">
+  <title>Planet Render 360 — Any point on Earth, in 3D</title>
   <link rel="icon" href="/assets/pr360-mark-mono-white.svg" type="image/svg+xml">
   <link rel="preload" href="/assets/InstrumentSans-Variable.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="/assets/new_york-opening.jpg" as="image">
@@ -13,11 +13,11 @@
   <script src="/app.js" type="module"></script>
 </head>
 <body>
-  <a class="skip-link" href="#destinations">Skip to destinations</a>
+  <a class="skip-link" href="#how">Skip to content</a>
   <header class="site-header">
     <a href="#" class="brand" aria-label="Planet Render 360 home"><img src="/assets/pr360-wordmark-dark.svg" alt="Planet Render 360" width="224" height="52"></a>
-    <nav aria-label="Main navigation"><a href="#experience">The experience</a><a href="#destinations">Places to begin</a><a href="#tools">Your toolkit</a><a href="#gallery">Gallery</a></nav>
-    <button class="button button-small" data-open="new_york">Step inside <span data-icon="arrow-right"></span></button>
+    <nav aria-label="Main navigation"><a href="#how">How it works</a><a href="#destinations">Try it</a><a href="#features">Features</a><a href="#gallery">Gallery</a></nav>
+    <button class="button button-small" data-open="new_york">Try the preview <span data-icon="arrow-right"></span></button>
   </header>
 
   <main>
@@ -25,19 +25,23 @@
       <img class="hero-image" id="hero-image" src="/assets/new_york-opening.jpg" alt="New York's skyline across the East River, rendered in Planet Render 360" fetchpriority="high">
       <div class="hero-shade"></div><div class="hero-grain" aria-hidden="true"></div>
       <div class="hero-content">
-        <div class="eyebrow"><span class="live-dot"></span> A world around every point</div>
-        <p class="hero-kicker">Pick a place. Change your perspective.</p>
-        <h1 id="hero-title">Be somewhere<br><em>extraordinary.</em></h1>
-        <p class="hero-description">From a pin on the map to a world you can look around. Discover real places in 3D, in your own light, at your own pace.</p>
-        <div class="hero-actions"><button class="button" data-open="new_york">Explore the experience <span data-icon="arrow-right"></span></button><a class="text-link" href="https://www.youtube.com/watch?v=OoHPGmX0qwg" target="_blank" rel="noopener noreferrer"><span data-icon="play"></span> Watch on YouTube</a></div>
-        <p class="hero-footnote">Real places. Rendered on your device. Free to explore.</p>
+        <div class="eyebrow"><span class="live-dot"></span> Real places in 3D · Free and open source</div>
+        <h1 id="hero-title">Stand anywhere.<br><em>Look around.</em></h1>
+        <p class="hero-description">Choose a point on the map and Planet Render 360 builds it as a 3D scene on your device, with real terrain, satellite imagery and buildings. Set any time of day or season, and the light and landscape change to match.</p>
+        <div class="hero-actions"><button class="button" data-open="new_york">Try the browser preview <span data-icon="arrow-right"></span></button><a class="text-link" href="https://www.youtube.com/watch?v=OoHPGmX0qwg" target="_blank" rel="noopener noreferrer"><span data-icon="play"></span> Watch the video</a></div>
+        <p class="hero-footnote">MIT-licensed · No account needed · macOS, iOS and Android</p>
       </div>
       <div class="hero-place glass"><span data-icon="map-pin"></span><div><span class="place-display">New York</span><span class="small muted">Brooklyn Bridge Park · United States</span></div><span class="pill-dot"></span><span class="data small">295° WNW</span></div>
-      <div class="hero-controls glass"><div class="small"><span data-icon="sun"></span> A different kind of daylight</div><div class="segments" id="hero-light" aria-label="Preview lighting"><button data-light="opening" aria-pressed="true">Morning</button><button data-light="day" aria-pressed="false">Midday</button><button data-light="night" aria-pressed="false">Night</button></div></div>
-      <div class="hero-bottom"><span class="capture-label">Captured in Planet Render 360 · Interactive showcase</span><a href="#destinations" class="scroll-cue">A few places to start <span data-icon="arrow-down"></span></a><span class="data small hero-coordinates">40.7027° N&nbsp; 73.9969° W</span></div>
+      <div class="hero-controls glass"><div class="small"><span data-icon="sun"></span> Same view, three times of day</div><div class="segments" id="hero-light" aria-label="Preview lighting"><button data-light="opening" aria-pressed="true">Morning</button><button data-light="day" aria-pressed="false">Midday</button><button data-light="night" aria-pressed="false">Night</button></div></div>
+      <div class="hero-bottom"><span class="capture-label">Screenshot from the app</span><a href="#how" class="scroll-cue">How it works <span data-icon="arrow-down"></span></a><span class="data small hero-coordinates">40.7027° N&nbsp; 73.9969° W</span></div>
     </section>
 
-    <div class="promise-strip"><span><span data-icon="globe"></span> Choose a point on Earth</span><span><span data-icon="move"></span> Look all around</span><span><span data-icon="sun"></span> Make the light your own</span><span><span data-icon="star"></span> Keep your favourite places</span></div>
+    <ul class="facts" aria-label="At a glance">
+      <li><span data-icon="mountain"></span><div><strong>Real elevation</strong><span>Terrain at true scale, out to the horizon</span></div></li>
+      <li><span data-icon="building-2"></span><div><strong>Mapped buildings</strong><span>OpenStreetMap, with regional roofs and facades</span></div></li>
+      <li><span data-icon="sunrise"></span><div><strong>Sun and seasons</strong><span>True sun position, in any of the four seasons</span></div></li>
+      <li><span data-icon="wifi-off"></span><div><strong>Works offline</strong><span>Save a place and come back without a connection</span></div></li>
+    </ul>
 
     <section class="section video-showcase" id="showcase-video" aria-labelledby="video-title">
       <div class="video-card">
@@ -46,12 +50,89 @@
           <span class="youtube-play" aria-hidden="true"><svg viewBox="0 0 68 48"><path d="M66.5 7.5a8.5 8.5 0 0 0-6-6C55.2 0 34 0 34 0S12.8 0 7.5 1.5a8.5 8.5 0 0 0-6 6C0 12.8 0 24 0 24s0 11.2 1.5 16.5a8.5 8.5 0 0 0 6 6C12.8 48 34 48 34 48s21.2 0 26.5-1.5a8.5 8.5 0 0 0 6-6C68 35.2 68 24 68 24s0-11.2-1.5-16.5Z" fill="#ff0000"/><path d="m27 34 18-10-18-10Z" fill="#ffffff"/></svg></span>
           <span class="video-preview-label glass">Watch on YouTube <span data-icon="arrow-up-right"></span></span>
         </a>
-        <div class="video-body"><div class="video-copy"><p class="eyebrow">The showcase video</p><h2 id="video-title">See it in motion.</h2><p>Watch the app showcase, or scan the code to open it on another screen.</p><a class="text-link" href="https://www.youtube.com/watch?v=OoHPGmX0qwg" target="_blank" rel="noopener noreferrer">Open on YouTube <span data-icon="arrow-up-right"></span></a></div><a class="video-qr" id="video-qr-link" href="https://www.youtube.com/watch?v=OoHPGmX0qwg" target="_blank" rel="noopener noreferrer" aria-label="Open the showcase video on YouTube"><img src="/assets/showcase-video-qr.svg" alt="QR code linking to the YouTube showcase video" width="136" height="136" loading="lazy"><span>Scan to watch</span></a></div>
+        <div class="video-body"><div class="video-copy"><p class="eyebrow">Video</p><h2 id="video-title">See it running.</h2><p>A short recording from the app. Scan the code to watch it on your phone.</p><a class="text-link" href="https://www.youtube.com/watch?v=OoHPGmX0qwg" target="_blank" rel="noopener noreferrer">Open on YouTube <span data-icon="arrow-up-right"></span></a></div><a class="video-qr" id="video-qr-link" href="https://www.youtube.com/watch?v=OoHPGmX0qwg" target="_blank" rel="noopener noreferrer" aria-label="Open the showcase video on YouTube"><img src="/assets/showcase-video-qr.svg" alt="QR code linking to the YouTube showcase video" width="136" height="136" loading="lazy"><span>Scan to watch</span></a></div>
+      </div>
+    </section>
+
+    <section class="section experience" id="how" aria-labelledby="experience-title">
+      <div class="section-heading"><div><p class="eyebrow">How it works</p><h2 id="experience-title">From a pin on the map to a place you can look around.</h2></div><p>Each scene is built on your device from free, public data. Nothing is pre-rendered.</p></div>
+      <div class="journey-layout">
+        <div class="journey-steps" role="tablist" aria-label="How the app works" aria-orientation="vertical">
+          <button class="journey-step" role="tab" aria-selected="true" id="step-0" aria-controls="journey-panel" data-step="0"><span class="step-number data">01</span><span><strong>Choose a point</strong><span>Tap the map, search for a place, or type coordinates. The selected spot shows its elevation, local time and current weather, and landmark markers open a short Wikipedia summary.</span></span><span data-icon="arrow-up-right"></span></button>
+          <button class="journey-step" role="tab" aria-selected="false" id="step-1" aria-controls="journey-panel" data-step="1" tabindex="-1"><span class="step-number data">02</span><span><strong>The scene is built</strong><span>Elevation, imagery, buildings, roads, water and trees are fetched and put together in stages. The loading screen shows each one as it happens, and a typical place is ready in a few minutes at most.</span></span><span data-icon="arrow-up-right"></span></button>
+          <button class="journey-step" role="tab" aria-selected="false" id="step-2" aria-controls="journey-panel" data-step="2" tabindex="-1"><span class="step-number data">03</span><span><strong>Look around</strong><span>Drag to look in any direction, walk the streets, or fly a drone over the area. History and favourites reopen each place facing the way you left it.</span></span><span data-icon="arrow-up-right"></span></button>
+        </div>
+        <div class="journey-stage" id="journey-panel" role="tabpanel" aria-labelledby="step-0"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="stage-coordinate data" id="stage-coordinate">48.8622° N&nbsp; 2.2887° E</span><div class="phone-frame"><div class="phone-speaker"></div><img id="journey-image" src="/assets/picker.jpg" alt="App screen: choosing a place on the map" loading="lazy"></div><div class="journey-caption glass"><span data-icon="map-pin" id="journey-icon"></span><div><strong id="journey-caption">Choosing a point near the Eiffel Tower</strong><span class="small muted">App screen · phone layout</span></div></div></div>
+      </div>
+    </section>
+
+    <section class="section destinations" id="destinations" aria-labelledby="destinations-title">
+      <div class="section-heading"><div><p class="eyebrow">Browser preview</p><h2 id="destinations-title">Try a few places from the app.</h2></div><p>The app works anywhere on Earth. These six of its preset places were captured so you can look around them here, in five directions and at three times of day.</p></div>
+      <div class="destination-toolbar"><div class="filter-tabs" aria-label="Destination filters"><button data-filter="all" aria-pressed="true">All <span class="data">06</span></button><button data-filter="city" aria-pressed="false">Cities</button><button data-filter="nature" aria-pressed="false">Landscapes</button><button data-filter="saved" aria-pressed="false"><span data-icon="star"></span> Favourites</button></div><label class="search-field"><span data-icon="search"></span><input id="place-search" type="search" placeholder="Filter places" aria-label="Filter showcase places"><kbd>/</kbd></label></div>
+      <div class="destination-grid" id="destination-grid"></div><p id="empty-places" class="empty-state" hidden>Nothing matches. Try another name, or star a place to add it to your favourites.</p>
+      <div class="destination-note"><span data-icon="info"></span><p>These are still captures, so you can turn but not move. In the app you choose any point on the map and move through the scene freely.</p></div>
+    </section>
+
+    <section class="light-section" aria-labelledby="light-title"><div class="light-picture"><img src="/assets/stockholm-winter-opening.jpg" alt="Stockholm's waterfront in winter, rendered in the app" loading="lazy"><span class="picture-caption glass"><span data-icon="snowflake"></span> Stockholm · Winter</span></div><div class="light-copy"><p class="eyebrow">Time of day and season</p><h2 id="light-title">Any hour, <br>in any season.</h2><p>Switch between spring, summer, autumn and winter, or pick a day on the calendar. Trees, grass and sky change with the season, and where the local climate brings snow and ice, winter brings them too. Light comes from where the sun actually is at that place, date and time.</p><button class="button" data-open="stockholm" data-season="winter">See Stockholm in winter <span data-icon="arrow-right"></span></button><div class="light-details"><div><span data-icon="calendar"></span><span>True sun position</span><p>Calculated for the place and any date and time.</p></div><div><span data-icon="leaf"></span><span>Four seasons</span><p>Seasonal colours for trees, grass and sky, with snow where it belongs.</p></div><div><span data-icon="play"></span><span>Time-lapse</span><p>Play a whole day, or step 15 minutes at a time.</p></div><div><span data-icon="moon"></span><span>After dark</span><p>Windows, street lamps, shopfronts and landmarks light up.</p></div></div></div></section>
+
+    <section class="section toolkit" id="tools" aria-labelledby="tools-title"><div class="section-heading"><div><p class="eyebrow">In the viewer</p><h2 id="tools-title">Walk the streets, <br>or fly above them.</h2></div><p>The controls stay at the edges of the screen, and one key hides them completely.</p></div>
+      <div class="tool-layout"><div class="tool-feature"><img id="tool-image" src="/assets/tools.jpg" alt="App screen showing the 360° view with its time and date controls" loading="lazy"><div class="tool-feature-caption"><span class="small">App screen · desktop layout</span><button class="round-button" id="expand-screen" aria-label="Enlarge app screenshot"><span data-icon="maximize"></span></button></div></div><div class="tool-list"><button class="tool-row" data-tool="look" aria-pressed="true"><span data-icon="drone"></span><span><strong>Walk, or fly a drone</strong><span>Tap the ground to walk there. Drone mode flies over the whole detailed area, up to 500 m above the ground, with on-screen sticks on touch screens.</span></span><span class="data">01</span></button><button class="tool-row" data-tool="landmarks" aria-pressed="false"><span data-icon="tag"></span><span><strong>Name what you see</strong><span>Label the peaks, towns and lakes on the skyline, list nearby landmarks, or open a mini-map that shows which way you’re facing.</span></span><span class="data">02</span></button><button class="tool-row" data-tool="photo" aria-pressed="false"><span data-icon="camera"></span><span><strong>Keep a view</strong><span>Save a photo, or copy a link to the exact spot and direction. Paste the link into search to open the same view again.</span></span><span class="data">03</span></button><button class="tool-row" data-tool="history" aria-pressed="false"><span data-icon="history"></span><span><strong>Come back later</strong><span>Recent places and favourites are kept on your device. Download a place to explore it without a connection.</span></span><span class="data">04</span></button></div></div><p id="tool-description" class="tool-description"><span data-icon="info"></span> In the app: W A S D to walk · G for drone mode · E / Q to climb and descend.</p>
+      <details class="shortcuts"><summary><span data-icon="hash"></span> All keyboard shortcuts <span data-icon="chevron-down" class="summary-chevron"></span></summary>
+        <dl class="shortcut-grid">
+          <div><dt><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></dt><dd>Walk, or fly in drone mode</dd></div>
+          <div><dt><kbd>E</kbd><kbd>Q</kbd></dt><dd>Rise and come back down</dd></div>
+          <div><dt><kbd>G</kbd></dt><dd>Drone mode</dd></div>
+          <div><dt><kbd>Shift</kbd></dt><dd>Move faster</dd></div>
+          <div><dt><kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd></dt><dd>Look around</dd></div>
+          <div><dt><kbd>+</kbd><kbd>−</kbd></dt><dd>Zoom</dd></div>
+          <div><dt><kbd>T</kbd></dt><dd>Play the day as a time-lapse</dd></div>
+          <div><dt><kbd>[</kbd><kbd>]</kbd></dt><dd>Time back or forward 15 minutes</dd></div>
+          <div><dt><kbd>1</kbd>–<kbd>4</kbd></dt><dd>Choose the season</dd></div>
+          <div><dt><kbd>N</kbd></dt><dd>Horizon labels</dd></div>
+          <div><dt><kbd>M</kbd></dt><dd>Mini-map</dd></div>
+          <div><dt><kbd>L</kbd></dt><dd>Nearby landmarks</dd></div>
+          <div><dt><kbd>P</kbd></dt><dd>Save a photo</dd></div>
+          <div><dt><kbd>C</kbd></dt><dd>Copy a link to this view</dd></div>
+          <div><dt><kbd>H</kbd></dt><dd>Hide the controls</dd></div>
+          <div><dt><kbd>F</kbd></dt><dd>Full screen</dd></div>
+          <div><dt><kbd>/</kbd></dt><dd>Search the map</dd></div>
+          <div><dt><kbd>Esc</kbd></dt><dd>Close a panel, or go back to the map</dd></div>
+        </dl>
+      </details>
+    </section>
+
+    <section class="section features" id="features" aria-labelledby="features-title">
+      <div class="section-heading"><div><p class="eyebrow">Inside a scene</p><h2 id="features-title">Built from open data, <br>put together on your device.</h2></div><p>If a source doesn’t respond, the view tells you in plain words and shows what it used instead.</p></div>
+      <div class="feature-grid">
+        <article class="feature-card"><span data-icon="mountain"></span><h3>Terrain at true scale</h3><p>Elevation data shapes the ground, with distant ridgelines and coastlines out to the horizon. Heights are never exaggerated.</p></article>
+        <article class="feature-card"><span data-icon="layers"></span><h3>Satellite imagery</h3><p>Aerial imagery is draped over the terrain, and land-cover data decides where there is forest, field, sand or water.</p></article>
+        <article class="feature-card"><span data-icon="building-2"></span><h3>Buildings and streets</h3><p>Mapped footprints become buildings with roof shapes and facades in the local style, along with roads, rail, bridges, quays and harbour boats.</p></article>
+        <article class="feature-card"><span data-icon="landmark"></span><h3>Recognisable landmarks</h3><p>Well-known sights get their own models, and monuments that are mapped in detail are built from their real parts.</p></article>
+        <article class="feature-card"><span data-icon="leaf"></span><h3>Local vegetation</h3><p>Trees and ground cover follow the local climate and canopy height, so dry places stay dry and forests look like forests.</p></article>
+        <article class="feature-card"><span data-icon="cloud-lightning"></span><h3>Current weather</h3><p>Cloud, rain, coastal fog and thunderstorms with lightning, based on the conditions at that place right now.</p></article>
+      </div>
+      <div class="spec-columns">
+        <div class="spec"><h3>Data sources</h3><dl class="source-list">
+          <div><dt>Elevation</dt><dd>AWS Terrain Tiles</dd></div>
+          <div><dt>Imagery</dt><dd>Esri World Imagery</dd></div>
+          <div><dt>Buildings and roads</dt><dd>OpenStreetMap</dd></div>
+          <div><dt>Land cover</dt><dd>ESA WorldCover</dd></div>
+          <div><dt>Climate</dt><dd>CHELSA V2.1</dd></div>
+          <div><dt>Weather</dt><dd>Open-Meteo</dd></div>
+          <div><dt>Map and search</dt><dd>OpenFreeMap · Nominatim</dd></div>
+          <div><dt>Landmarks</dt><dd>Wikipedia · Wikimedia Commons</dd></div>
+        </dl></div>
+        <div class="spec"><h3>Settings</h3><ul class="setting-list">
+          <li><span data-icon="gauge"></span><span><strong>Render quality</strong> Fast, Balanced, High or Ultra, with automatic adjustment to keep the frame rate smooth.</span></li>
+          <li><span data-icon="palette"></span><span><strong>Appearance</strong> Night, Day or system theme, and an accent colour that can follow the sun.</span></li>
+          <li><span data-icon="eye"></span><span><strong>Accessibility</strong> Reduce motion, solid panels, higher contrast and screen-reader announcements.</span></li>
+          <li><span data-icon="hard-drive"></span><span><strong>Storage and units</strong> Choose how much to cache, and metric or imperial units.</span></li>
+        </ul></div>
       </div>
     </section>
 
     <section class="section screenshot-gallery" id="gallery" aria-labelledby="gallery-title">
-      <div class="section-heading"><div><p class="eyebrow">From the app</p><h2 id="gallery-title">A world of perspectives.</h2></div><p>Real places, captured in Planet Render 360.<br>Choose a view to see it larger.</p></div>
+      <div class="section-heading"><div><p class="eyebrow">Gallery</p><h2 id="gallery-title">Screenshots from the app.</h2></div><p>Helsinki, Espoo, Monaco, Dubai and San Francisco. Select a screenshot to open it at full size.</p></div>
       <div class="gallery-grid">
         <figure class="gallery-card"><a href="/assets/gallery/helsinki-cathedral.webp" target="_blank" rel="noopener noreferrer" aria-label="Open larger screenshot: Helsinki, Helsinki Cathedral at sunrise"><img src="/assets/gallery/helsinki-cathedral.webp" alt="Helsinki Cathedral at sunrise, rendered in Planet Render 360" width="1280" height="800" loading="lazy"></a><figcaption><span class="gallery-city">Helsinki</span><span class="small muted">Helsinki Cathedral at sunrise</span></figcaption></figure>
         <figure class="gallery-card"><a href="/assets/gallery/monaco-port.webp" target="_blank" rel="noopener noreferrer" aria-label="Open larger screenshot: Monaco, Port Hercule and Sainte-Dévote"><img src="/assets/gallery/monaco-port.webp" alt="Port Hercule and Sainte-Dévote, rendered in Planet Render 360" width="1280" height="800" loading="lazy"></a><figcaption><span class="gallery-city">Monaco</span><span class="small muted">Port Hercule and Sainte-Dévote</span></figcaption></figure>
@@ -68,49 +149,32 @@
       </div>
     </section>
 
-    <section class="section destinations" id="destinations" aria-labelledby="destinations-title">
-      <div class="section-heading"><div><p class="eyebrow">01 / Find your somewhere</p><h2 id="destinations-title">Where would you rather be?</h2></div><p>A familiar skyline. A quieter horizon. <br>Start with a place that pulls you in.</p></div>
-      <div class="destination-toolbar"><div class="filter-tabs" aria-label="Destination filters"><button data-filter="all" aria-pressed="true">All places <span class="data">06</span></button><button data-filter="city" aria-pressed="false">City escapes</button><button data-filter="nature" aria-pressed="false">Into the wild</button><button data-filter="saved" aria-pressed="false"><span data-icon="star"></span> Your favourites</button></div><label class="search-field"><span data-icon="search"></span><input id="place-search" type="search" placeholder="Find a place" aria-label="Search showcase destinations"><kbd>/</kbd></label></div>
-      <div class="destination-grid" id="destination-grid"></div><p id="empty-places" class="empty-state" hidden>No places here yet. Try another search, or save a place with the star.</p>
-      <div class="destination-note"><span data-icon="info"></span><p>Six places to try here. In the app, search for a place, enter coordinates, or tap anywhere on the map.</p><a href="#experience">Follow the journey <span data-icon="arrow-down"></span></a></div>
+    <section class="section closing" aria-labelledby="closing-title">
+      <div class="closing-copy"><p class="eyebrow">Get the app</p><h2 id="closing-title">Free to use, <br>and open source.</h2><p>Planet Render 360 is built with Godot by Petri Tuononen. The source code, build instructions and technical documentation are on GitHub, under the MIT licence.</p>
+        <div class="closing-actions"><a class="button" href="https://github.com/TuononenP/planet-render-360" target="_blank" rel="noopener noreferrer">View on GitHub <span data-icon="arrow-up-right"></span></a><button class="text-link" data-open="banff">Or look around Banff first <span data-icon="arrow-right"></span></button></div></div>
+      <ul class="closing-facts">
+        <li><span data-icon="smartphone"></span><span><strong>macOS, iOS and Android</strong> Designed for phones first, with tablet and desktop layouts.</span></li>
+        <li><span data-icon="check"></span><span><strong>No account, no paywall</strong> Favourites and history stay on your device.</span></li>
+        <li><span data-icon="globe"></span><span><strong>Free public data only</strong> Every source is credited in the app.</span></li>
+      </ul>
     </section>
-
-    <section class="section experience" id="experience" aria-labelledby="experience-title">
-      <div class="section-heading"><div><p class="eyebrow">02 / From here to there</p><h2 id="experience-title">A little curiosity. <br>A whole new point of view.</h2></div><p>One simple journey, from that first<br>“what’s over there?” to looking around.</p></div>
-      <div class="journey-layout">
-        <div class="journey-steps" role="tablist" aria-label="App journey" aria-orientation="vertical">
-          <button class="journey-step" role="tab" aria-selected="true" id="step-0" aria-controls="journey-panel" data-step="0"><span class="step-number data">01</span><span><strong>Follow your curiosity</strong><span>Search a city, tap the map, or choose a landmark. Your next viewpoint starts with a pin.</span></span><span data-icon="arrow-up-right"></span></button>
-          <button class="journey-step" role="tab" aria-selected="false" id="step-1" aria-controls="journey-panel" data-step="1" tabindex="-1"><span class="step-number data">02</span><span><strong>Watch a place take shape</strong><span>Terrain, imagery, buildings, and weather come together. See what’s happening along the way.</span></span><span data-icon="arrow-up-right"></span></button>
-          <button class="journey-step" role="tab" aria-selected="false" id="step-2" aria-controls="journey-panel" data-step="2" tabindex="-1"><span class="step-number data">03</span><span><strong>Make yourself at home</strong><span>Look around. Follow the sun. Find a new angle. Save a place and return to the view you left.</span></span><span data-icon="arrow-up-right"></span></button>
-        </div>
-        <div class="journey-stage" id="journey-panel" role="tabpanel" aria-labelledby="step-0"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="stage-coordinate data" id="stage-coordinate">48.8622° N&nbsp; 2.2887° E</span><div class="phone-frame"><div class="phone-speaker"></div><img id="journey-image" src="/assets/picker.jpg" alt="Actual app screen: choosing a place on the map" loading="lazy"></div><div class="journey-caption glass"><span data-icon="map-pin" id="journey-icon"></span><div><strong id="journey-caption">A point on the map. A place to begin.</strong><span class="small muted">Actual app screen · phone layout</span></div></div></div>
-      </div>
-    </section>
-
-    <section class="light-section" aria-labelledby="light-title"><div class="light-picture"><img src="/assets/stockholm-winter-opening.jpg" alt="Stockholm's waterfront in winter, rendered in the app" loading="lazy"><span class="picture-caption glass"><span data-icon="snowflake"></span> Stockholm · Winter</span></div><div class="light-copy"><p class="eyebrow">03 / Stay for a different season</p><h2 id="light-title">Same place. <br>A different feeling.</h2><p>Chase the last light. See the rooftops in snow. In the app, change the time, date, and season to discover how a familiar view becomes something new.</p><button class="button" data-open="stockholm" data-season="winter">See Stockholm in winter <span data-icon="arrow-right"></span></button><div class="light-details"><div><span data-icon="sunset"></span><span>Follow the sun</span><p>Scrub through a day or let time-lapse carry you.</p></div><div><span data-icon="calendar"></span><span>Pick your moment</span><p>Choose a calendar date and a season.</p></div></div></div></section>
-
-    <section class="section toolkit" id="tools" aria-labelledby="tools-title"><div class="section-heading"><div><p class="eyebrow">04 / Get a little closer</p><h2 id="tools-title">More than a view. <br>Your own way to explore.</h2></div><p>The controls stay at the edges. <br>The world stays in front of you.</p></div>
-      <div class="tool-layout"><div class="tool-feature"><img id="tool-image" src="/assets/tools.jpg" alt="Actual app screen with time-of-day and season controls" loading="lazy"><div class="tool-feature-caption"><span class="small">Actual app screen</span><button class="round-button" id="expand-screen" aria-label="Enlarge app screenshot"><span data-icon="maximize"></span></button></div></div><div class="tool-list"><button class="tool-row" data-tool="look" aria-pressed="true"><span data-icon="move"></span><span><strong>Look, walk, take flight</strong><span>Drag to look around. Walk the scene or lift off in drone mode for a wider perspective.</span></span><span class="data">01</span></button><button class="tool-row" data-tool="landmarks" aria-pressed="false"><span data-icon="landmark"></span><span><strong>Put a name to the horizon</strong><span>Find nearby landmarks, open their stories, and identify peaks, towns, and lakes.</span></span><span class="data">02</span></button><button class="tool-row" data-tool="photo" aria-pressed="false"><span data-icon="camera"></span><span><strong>Keep the moment</strong><span>Save a photo or copy a link to the exact view. A good perspective is worth coming back to.</span></span><span class="data">03</span></button><button class="tool-row" data-tool="history" aria-pressed="false"><span data-icon="history"></span><span><strong>Come back to somewhere</strong><span>Keep favourites, revisit your history, and download places for offline exploration.</span></span><span class="data">04</span></button></div></div><p id="tool-description" class="tool-description"><span data-icon="info"></span> In the app: W A S D to walk · G for drone mode · H to hide the controls.</p>
-    </section>
-
-    <section class="section final-invitation"><img src="/assets/pr360-mark-mono-white.svg" width="64" height="64" alt=""><p class="eyebrow">Your next perspective is waiting</p><h2>There’s a world<br>around every point.</h2><button class="button" data-open="banff">Find your next horizon <span data-icon="arrow-right"></span></button><p class="small muted">Free to explore · No paywall · Built for curiosity</p></section>
   </main>
-  <footer><img src="/assets/pr360-wordmark-dark.svg" alt="Planet Render 360" width="200" height="48"><div class="footer-credit"><span>Created by Petri Tuononen</span><a class="text-link" href="https://github.com/TuononenP/planet-render-360" target="_blank" rel="noopener noreferrer">View app on GitHub <span data-icon="arrow-up-right"></span></a></div><button class="text-link" id="about-site">About this showcase <span data-icon="arrow-up-right"></span></button><span class="small muted">macOS · iOS · Android builds</span></footer>
+  <footer><img src="/assets/pr360-wordmark-dark.svg" alt="Planet Render 360" width="200" height="48"><div class="footer-credit"><span>Created by Petri Tuononen</span><a class="text-link" href="https://github.com/TuononenP/planet-render-360" target="_blank" rel="noopener noreferrer">View app on GitHub <span data-icon="arrow-up-right"></span></a></div><button class="text-link" id="about-site">About this site <span data-icon="arrow-up-right"></span></button><span class="small muted">Built with Godot · MIT licence</span></footer>
 
   <dialog id="explorer" class="explorer" aria-label="Interactive app preview">
     <div class="viewer" id="viewer"><img id="viewer-image" class="viewer-image" alt=""><div class="viewer-scrim"></div><div class="viewer-top"><button class="round-button glass" id="close-explorer" aria-label="Close preview"><span data-icon="arrow-left"></span></button><div class="viewer-place glass"><span class="place-display" id="viewer-title"></span><span id="viewer-region" class="small muted"></span></div><span class="viewer-badge glass small">Captured preview</span><button class="round-button glass" id="viewer-save" aria-label="Save favourite" aria-pressed="false"><span data-icon="star"></span></button></div>
     <div class="viewer-compass glass data" id="viewer-compass">295° W</div>
     <div class="viewer-center" id="viewer-drag" tabindex="0" role="region" aria-label="Captured viewpoints. Drag left or right, or use arrow keys to browse directions."><span class="drag-prompt glass" id="drag-prompt"><span data-icon="move"></span> Drag to look around</span></div>
     <div class="viewer-directions glass"><button id="previous-direction" class="round-button" aria-label="Previous captured direction"><span data-icon="chevron-left"></span></button><span id="direction-name" class="small">Opening view</span><button id="next-direction" class="round-button" aria-label="Next captured direction"><span data-icon="chevron-right"></span></button></div>
-    <aside class="viewer-panel glass" id="viewer-panel"><div class="viewer-panel-title"><div><p class="eyebrow">Make the view your own</p><h2 id="panel-title">A moment in the light.</h2></div><button id="toggle-panel" class="round-button" aria-label="Collapse view controls" aria-expanded="true"><span data-icon="chevron-down"></span></button></div><div id="panel-controls"><div class="control-label"><span><span data-icon="sun"></span> Time of day</span><button id="timelapse" class="text-link small" aria-pressed="false"><span data-icon="play"></span> Time-lapse</button></div><div class="segments light-segments" id="viewer-light"><button data-time="day" aria-pressed="false">Midday</button><button data-time="opening" aria-pressed="true">Opening light</button><button data-time="night" aria-pressed="false">Night</button></div><div class="season-control" id="season-control"><span class="small">Season</span><div class="segments"><button data-season-choice="summer" aria-pressed="true">Summer</button><button data-season-choice="winter" aria-pressed="false">Winter</button></div></div><p class="small muted preview-hint" id="preview-hint">Try the captured light changes. In the app, choose any time with the sun arc.</p></div></aside>
+    <aside class="viewer-panel glass" id="viewer-panel"><div class="viewer-panel-title"><div><p class="eyebrow">Light and season</p><h2 id="panel-title">Opening light</h2></div><button id="toggle-panel" class="round-button" aria-label="Collapse view controls" aria-expanded="true"><span data-icon="chevron-down"></span></button></div><div id="panel-controls"><div class="control-label"><span><span data-icon="sun"></span> Time of day</span><button id="timelapse" class="text-link small" aria-pressed="false"><span data-icon="play"></span> Time-lapse</button></div><div class="segments light-segments" id="viewer-light"><button data-time="day" aria-pressed="false">Midday</button><button data-time="opening" aria-pressed="true">Opening light</button><button data-time="night" aria-pressed="false">Night</button></div><div class="season-control" id="season-control"><span class="small">Season</span><div class="segments"><button data-season-choice="summer" aria-pressed="true">Summer</button><button data-season-choice="winter" aria-pressed="false">Winter</button></div></div><p class="small muted preview-hint" id="preview-hint">Switch between the captured light, or play a time-lapse. In the app, the sun arc covers any time of day.</p></div></aside>
     <div class="viewer-toolbar glass" aria-label="Preview tools"><button id="photo-button"><span data-icon="camera"></span><span>Save photo</span></button><button id="share-button"><span data-icon="link"></span><span>Copy view link</span></button><button id="info-button" aria-pressed="false"><span data-icon="info"></span><span>About this view</span></button><button id="tour-button"><span data-icon="play"></span><span>Take a tour</span></button></div>
-    <div class="viewer-bottom"><span id="viewer-coordinates" class="data small"></span><span class="capture-label">Real app captures · Full 3D movement in the app</span></div>
-    <div class="view-info glass" id="view-info" hidden><button class="round-button" id="close-info" aria-label="Close view information"><span data-icon="x"></span></button><p class="eyebrow">From your point of view</p><h3 id="info-title"></h3><p id="info-copy"></p><p class="small muted">This browser preview uses captured app scenes. The app builds navigable terrain and buildings from real-world data, with detail that varies by place.</p></div>
-    <div id="tour-card" class="tour-card glass" hidden><div class="tour-top"><span class="eyebrow" id="tour-count">Your first look · 1 / 4</span><button class="round-button" id="close-tour" aria-label="Close guided tour"><span data-icon="x"></span></button></div><h3 id="tour-title"></h3><p id="tour-copy"></p><button class="button button-small" id="tour-next">Next <span data-icon="arrow-right"></span></button></div>
+    <div class="viewer-bottom"><span id="viewer-coordinates" class="data small"></span><span class="capture-label">Captured in the app · Free movement in the app only</span></div>
+    <div class="view-info glass" id="view-info" hidden><button class="round-button" id="close-info" aria-label="Close view information"><span data-icon="x"></span></button><p class="eyebrow">About this view</p><h3 id="info-title"></h3><p id="info-copy"></p><p class="small muted">This browser preview shows scenes captured in the app. The app builds terrain and buildings you can move through from real-world data, and the level of detail varies by place.</p></div>
+    <div id="tour-card" class="tour-card glass" hidden><div class="tour-top"><span class="eyebrow" id="tour-count">Quick tour · 1 / 4</span><button class="round-button" id="close-tour" aria-label="Close guided tour"><span data-icon="x"></span></button></div><h3 id="tour-title"></h3><p id="tour-copy"></p><button class="button button-small" id="tour-next">Next <span data-icon="arrow-right"></span></button></div>
     </div>
   </dialog>
-  <dialog id="screen-dialog" class="screen-dialog" aria-label="App screenshot"><button class="round-button glass" id="close-screen" aria-label="Close screenshot"><span data-icon="x"></span></button><img id="full-screen-image" src="/assets/tools.jpg" alt="Enlarged actual app screen"></dialog>
-  <dialog id="about-dialog" class="about-dialog glass" aria-labelledby="about-title"><button class="round-button" id="close-about" aria-label="Close about"><span data-icon="x"></span></button><p class="eyebrow">Planet Render 360</p><h2 id="about-title">A closer look at exploring.</h2><p>This showcase demonstrates the app’s experience with real captures from the project. Destination previews, favourite places, photo downloads, and shareable showcase links work here in your browser.</p><p>The full app adds live place search, on-device 3D generation, free movement, drone flight, real weather, calendar controls, and offline downloads. This website doesn’t run the Godot app.</p><p class="small muted">Scene data: AWS Terrain Tiles; Esri, Vantor, Earthstar Geographics and the GIS User Community; © OpenStreetMap contributors; CHELSA V2.1. Map screens: OpenFreeMap and © OpenMapTiles. Landmark content in the app: Wikipedia and Wikimedia Commons.</p><p class="small muted">Favourites are stored on this browser. No account or sign-up is needed for this showcase.</p></dialog>
+  <dialog id="screen-dialog" class="screen-dialog" aria-label="App screenshot"><button class="round-button glass" id="close-screen" aria-label="Close screenshot"><span data-icon="x"></span></button><img id="full-screen-image" src="/assets/tools.jpg" alt="Enlarged app screen"></dialog>
+  <dialog id="about-dialog" class="about-dialog glass" aria-labelledby="about-title"><button class="round-button" id="close-about" aria-label="Close about"><span data-icon="x"></span></button><p class="eyebrow">Planet Render 360</p><h2 id="about-title">About this site</h2><p>This site shows the app using real captures from the project. Place previews, favourites, photo downloads and shareable preview links all work in your browser.</p><p>The app itself adds place search, on-device 3D generation, free movement, drone flight, live weather, calendar controls and offline downloads. This website doesn’t run the Godot app.</p><p class="small muted">Scene data: AWS Terrain Tiles; Esri, Vantor, Earthstar Geographics and the GIS User Community; © OpenStreetMap contributors; CHELSA V2.1. Map screens: OpenFreeMap and © OpenMapTiles. Landmark content in the app: Wikipedia and Wikimedia Commons.</p><p class="small muted">Favourites are stored in this browser. No account or sign-up is needed.</p></dialog>
   <div class="toast glass" id="toast" role="status" aria-live="polite"></div>
   <noscript><p class="noscript">Enable JavaScript to try the interactive previews. The app screenshots and feature descriptions are available below.</p></noscript>
 </body>

@@ -81,7 +81,7 @@ function renderPlaces() {
   $('#destination-grid').innerHTML = results.map(place => `
     <article class="destination-card">
       <button class="card-open" data-open="${place.id}" aria-label="Explore ${place.name}">
-        <div class="card-picture"><img src="${place.images.opening}" alt="${place.name}, rendered in Planet Render 360" loading="lazy"><span class="card-category">${place.id === 'banff' ? 'A quieter horizon' : 'City escape'}</span></div>
+        <div class="card-picture"><img src="${place.images.opening}" alt="${place.name}, rendered in Planet Render 360" loading="lazy"><span class="card-category">${place.spot}</span></div>
         <div class="card-body"><div class="card-place-row"><h3>${place.name}</h3><span data-icon="arrow-up-right"></span></div><p class="card-country">${place.country}</p><div class="card-coordinates"><span>${coordinate(place.lat, 'N', 'S')}</span> <span>${coordinate(place.lon, 'E', 'W')}</span></div></div>
       </button>
       <button class="save-place" data-save="${place.id}" aria-label="${saved.includes(place.id) ? 'Remove' : 'Save'} ${place.name} ${saved.includes(place.id) ? 'from' : 'to'} favourites" aria-pressed="${saved.includes(place.id)}"><span data-icon="star"></span></button>
@@ -105,9 +105,9 @@ $$('[data-light]').forEach(button => button.addEventListener('click', () => {
 }));
 
 const journey = [
-  { image: 'picker', coordinates: '48.8622° N  2.2887° E', title: 'A point on the map. A place to begin.', icon: 'map-pin', alt: 'Actual app screen: choosing a place on the map' },
-  { image: 'loading', coordinates: '48.8622° N  2.2887° E', title: 'A world coming together, layer by layer.', icon: 'layers', alt: 'Actual app screen: terrain and data loading progress' },
-  { image: 'viewer', coordinates: '46.6863° N  7.8632° E', title: 'Arrive. Look around. Stay a little.', icon: 'move', alt: 'Actual app screen: exploring Interlaken in the 360 viewer' },
+  { image: 'picker', coordinates: '48.8622° N  2.2887° E', title: 'Choosing a point near the Eiffel Tower', icon: 'map-pin', alt: 'App screen: choosing a place on the map' },
+  { image: 'loading', coordinates: '48.8622° N  2.2887° E', title: 'Loading, with each stage shown as it runs', icon: 'layers', alt: 'App screen: terrain and data loading progress' },
+  { image: 'viewer', coordinates: '46.6863° N  7.8632° E', title: 'Interlaken, Switzerland, in the 360° view', icon: 'move', alt: 'App screen: looking around Interlaken in the 360° view' },
 ];
 function selectJourney(index, focus = false) {
   const item = journey[index];
@@ -134,10 +134,10 @@ $$('[data-step]').forEach(button => {
   });
 });
 const tools = {
-  look: { image: 'tools', alt: 'Actual app screen showing the 360 view and its controls', copy: 'In the app: W A S D to walk · G for drone mode · H to hide the controls.' },
-  landmarks: { image: 'picker', alt: 'Actual app screen showing the map and landmark discovery', copy: 'In the app: open a map landmark for its story, or press L in the viewer to list nearby landmarks.' },
-  photo: { image: 'tools', alt: 'Actual app screen with the viewer tool menu', copy: 'In the app: P to save a photo · C to copy an exact view link · N for horizon labels.' },
-  history: { image: 'history', alt: 'Actual app screen showing recent places, favourites, and cached worlds', copy: 'In the app: history keeps your viewpoint. Cached worlds help you return more quickly.' },
+  look: { image: 'tools', alt: 'App screen showing the 360° view and its controls', copy: 'In the app: W A S D to walk · G for drone mode · E / Q to climb and descend.' },
+  landmarks: { image: 'tools', alt: 'App screen with horizon labels naming the towns and peaks on the skyline', copy: 'In the app: N for horizon labels · M for the mini-map · L to list nearby landmarks.' },
+  photo: { image: 'tools', alt: 'App screen with the viewer tool menu', copy: 'In the app: P to save a photo · C to copy a link to this exact view.' },
+  history: { image: 'history', alt: 'App screen showing recent places, favourites and saved scenes', copy: 'In the app: saved scenes open faster, and downloaded places work offline.' },
 };
 $$('[data-tool]').forEach(button => button.addEventListener('click', () => {
   const tool = tools[button.dataset.tool];
@@ -206,8 +206,10 @@ function renderView() {
   $('#timelapse').disabled = !['opening', 'day', 'night'].every(key => current.images[season === 'winter' ? `winter_${key}` : key]);
   $('#season-control').hidden = !current.images.winter_opening;
   $$('[data-season-choice]').forEach(button => button.setAttribute('aria-pressed', button.dataset.seasonChoice === season));
-  $('#panel-title').textContent = season === 'winter' ? 'A winter kind of quiet.' : light === 'night' ? 'After the light fades.' : 'A moment in the light.';
-  $('#preview-hint').textContent = 'Try the captured light changes or play time-lapse. In the app, choose any time with the sun arc.';
+  const lightName = { opening: 'opening light', day: 'midday', night: 'night' }[light];
+  const panelTitle = season === 'winter' ? `Winter, ${lightName}` : lightName;
+  $('#panel-title').textContent = panelTitle[0].toUpperCase() + panelTitle.slice(1);
+  $('#preview-hint').textContent = 'Switch between the captured light, or play a time-lapse. In the app, the sun arc covers any time of day.';
   $('#info-title').textContent = current.spot;
   $('#info-copy').textContent = placeStories[current.id];
   $('#drag-prompt').style.opacity = '1';
@@ -279,7 +281,7 @@ $('#timelapse').addEventListener('click', () => {
   const advance = () => { light = cycle[(cycle.indexOf(light) + 1) % cycle.length]; renderView(); };
   advance();
   lapseTimer = setInterval(advance, 2500);
-  notify('Playing three captured moments. Pause at any time.');
+  notify('Playing the three captured times of day');
 });
 function changeDirection(offset) {
   stopTimeLapse();
@@ -330,7 +332,7 @@ $('#share-button').addEventListener('click', async () => {
   updateURL();
   try {
     await navigator.clipboard.writeText(location.href);
-    notify('Showcase view link copied');
+    notify('Link to this view copied');
   } catch { notify('The view is in your browser address. Copy the URL to share it.'); }
 });
 function closeInfo() {
@@ -345,13 +347,13 @@ $('#info-button').addEventListener('click', () => {
 });
 $('#close-info').addEventListener('click', closeInfo);
 const tour = [
-  { title: 'Arrive somewhere new.', copy: 'In the app, tap the map or search for a place to build a view. Here, you’re exploring real captures from six destinations.' },
-  { title: 'Turn toward your curiosity.', copy: 'Drag the scene or use the direction arrows to browse captured viewpoints. In the app, look freely, walk the ground, or fly a drone.' },
-  { title: 'Find your favourite light.', copy: 'Try Midday, Opening light, and Night. The app’s sun arc lets you choose any time. Stockholm also has a winter preview here.' },
-  { title: 'Take a little of it with you.', copy: 'Use Save photo for a capture, copy a showcase view link, or star this place to keep it in your browser’s favourites.' },
+  { title: 'Captured views', copy: 'This preview shows scenes captured in the app. In the app itself, you tap the map or search for a place, and the scene is built on your device.' },
+  { title: 'Look around', copy: 'Drag the scene or use the arrows to switch between five captured directions. In the app, you can look, walk and fly freely.' },
+  { title: 'Change the light', copy: 'Switch between opening light, midday and night, or play a time-lapse. Stockholm has a winter version too. In the app, the sun arc and calendar cover any time and date.' },
+  { title: 'Keep a view', copy: 'Save a photo, copy a link to this view, or star the place to keep it in this browser’s favourites.' },
 ];
 function renderTour() {
-  $('#tour-count').textContent = `Your first look · ${tourStep + 1} / ${tour.length}`;
+  $('#tour-count').textContent = `Quick tour · ${tourStep + 1} / ${tour.length}`;
   $('#tour-title').textContent = tour[tourStep].title;
   $('#tour-copy').textContent = tour[tourStep].copy;
   $('#tour-next').innerHTML = `${tourStep === 3 ? 'Start exploring' : 'Next'} <span data-icon="arrow-right"></span>`;
