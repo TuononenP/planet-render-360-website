@@ -98,6 +98,13 @@ $$('[data-filter]').forEach(button => button.addEventListener('click', () => {
   renderPlaces();
 }));
 
+// Gallery filter: every screenshot is visible by default, buttons narrow it by place.
+$$('[data-gallery-filter]').forEach(button => button.addEventListener('click', () => {
+  const group = button.dataset.galleryFilter;
+  $$('[data-gallery-filter]').forEach(item => item.setAttribute('aria-pressed', item === button));
+  $$('#gallery-grid .gallery-card').forEach(card => { card.hidden = group !== 'all' && card.dataset.group !== group; });
+}));
+
 // The landing page uses the exact rendered captures, without tinting them.
 $$('[data-light]').forEach(button => button.addEventListener('click', () => {
   $('#hero-image').src = places[0].images[button.dataset.light];
