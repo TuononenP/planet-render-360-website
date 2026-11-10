@@ -25,6 +25,12 @@ npm run test:browser
 
 The Worker checks verify routes, assets, request methods, security headers, image formats, and hosting metadata. The browser checks exercise the built Worker on a temporary local port, including desktop and phone layouts, search, favourites and persistence, directions, time changes, seasons, tours, downloads, and restored view links. Review screenshots go to `review/` (ignored by Git).
 
+## GitHub Pages publication
+
+`.github/workflows/pages.yml` runs `npm run build` and `npm test` on every push to `main`, then publishes `public/` to GitHub Pages. Enable it once under Settings → Pages → Source: GitHub Actions. The site is then served at <https://tuononenp.github.io/planet-render-360-website/>.
+
+All asset paths are relative (`assets/…`, not `/assets/…`) so the site works under that subpath; `npm test` fails on root-relative paths. GitHub Pages cannot send custom headers, so `index.html` sets the Content Security Policy and referrer policy with `<meta>` tags. `frame-ancestors` and `X-Content-Type-Options` apply only on the Worker.
+
 ## ChatGPT Sites publication
 
 `npm run build` creates `dist/server/index.js` and `dist/.openai/hosting.json`. The Worker embeds the static assets so the output needs no external asset service, database, secrets, or build dependencies.

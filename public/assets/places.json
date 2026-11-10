@@ -8,13 +8,13 @@
     "lon": -73.99686,
     "bearing": 295,
     "images": {
-      "opening": "/assets/new_york-opening.jpg",
-      "day": "/assets/new_york-day.jpg",
-      "night": "/assets/new_york-night.jpg",
-      "north": "/assets/new_york-north.jpg",
-      "east": "/assets/new_york-east.jpg",
-      "south": "/assets/new_york-south.jpg",
-      "west": "/assets/new_york-west.jpg"
+      "opening": "assets/new_york-opening.jpg",
+      "day": "assets/new_york-day.jpg",
+      "night": "assets/new_york-night.jpg",
+      "north": "assets/new_york-north.jpg",
+      "east": "assets/new_york-east.jpg",
+      "south": "assets/new_york-south.jpg",
+      "west": "assets/new_york-west.jpg"
     }
   },
   {
@@ -26,20 +26,20 @@
     "lon": 18.0604,
     "bearing": 10,
     "images": {
-      "opening": "/assets/stockholm-opening.jpg",
-      "day": "/assets/stockholm-day.jpg",
-      "night": "/assets/stockholm-night.jpg",
-      "north": "/assets/stockholm-north.jpg",
-      "east": "/assets/stockholm-east.jpg",
-      "south": "/assets/stockholm-south.jpg",
-      "west": "/assets/stockholm-west.jpg",
-      "winter_opening": "/assets/stockholm-winter-opening.jpg",
-      "winter_day": "/assets/stockholm-winter-day.jpg",
-      "winter_night": "/assets/stockholm-winter-night.jpg",
-      "winter_north": "/assets/stockholm-winter-north.jpg",
-      "winter_east": "/assets/stockholm-winter-east.jpg",
-      "winter_south": "/assets/stockholm-winter-south.jpg",
-      "winter_west": "/assets/stockholm-winter-west.jpg"
+      "opening": "assets/stockholm-opening.jpg",
+      "day": "assets/stockholm-day.jpg",
+      "night": "assets/stockholm-night.jpg",
+      "north": "assets/stockholm-north.jpg",
+      "east": "assets/stockholm-east.jpg",
+      "south": "assets/stockholm-south.jpg",
+      "west": "assets/stockholm-west.jpg",
+      "winter_opening": "assets/stockholm-winter-opening.jpg",
+      "winter_day": "assets/stockholm-winter-day.jpg",
+      "winter_night": "assets/stockholm-winter-night.jpg",
+      "winter_north": "assets/stockholm-winter-north.jpg",
+      "winter_east": "assets/stockholm-winter-east.jpg",
+      "winter_south": "assets/stockholm-winter-south.jpg",
+      "winter_west": "assets/stockholm-winter-west.jpg"
     }
   },
   {
@@ -51,13 +51,13 @@
     "lon": 2.2887,
     "bearing": 142,
     "images": {
-      "opening": "/assets/paris-opening.jpg",
-      "day": "/assets/paris-day.jpg",
-      "night": "/assets/paris-night.jpg",
-      "north": "/assets/paris-north.jpg",
-      "east": "/assets/paris-east.jpg",
-      "south": "/assets/paris-south.jpg",
-      "west": "/assets/paris-west.jpg"
+      "opening": "assets/paris-opening.jpg",
+      "day": "assets/paris-day.jpg",
+      "night": "assets/paris-night.jpg",
+      "north": "assets/paris-north.jpg",
+      "east": "assets/paris-east.jpg",
+      "south": "assets/paris-south.jpg",
+      "west": "assets/paris-west.jpg"
     }
   },
   {
@@ -69,13 +69,13 @@
     "lon": -115.5596,
     "bearing": 205,
     "images": {
-      "opening": "/assets/banff-opening.jpg",
-      "day": "/assets/banff-day.jpg",
-      "night": "/assets/banff-night.jpg",
-      "north": "/assets/banff-north.jpg",
-      "east": "/assets/banff-east.jpg",
-      "south": "/assets/banff-south.jpg",
-      "west": "/assets/banff-west.jpg"
+      "opening": "assets/banff-opening.jpg",
+      "day": "assets/banff-day.jpg",
+      "night": "assets/banff-night.jpg",
+      "north": "assets/banff-north.jpg",
+      "east": "assets/banff-east.jpg",
+      "south": "assets/banff-south.jpg",
+      "west": "assets/banff-west.jpg"
     }
   },
   {
@@ -87,13 +87,13 @@
     "lon": -122.4196,
     "bearing": 352,
     "images": {
-      "opening": "/assets/san_francisco-opening.jpg",
-      "day": "/assets/san_francisco-day.jpg",
-      "night": "/assets/san_francisco-night.jpg",
-      "north": "/assets/san_francisco-north.jpg",
-      "east": "/assets/san_francisco-east.jpg",
-      "south": "/assets/san_francisco-south.jpg",
-      "west": "/assets/san_francisco-west.jpg"
+      "opening": "assets/san_francisco-opening.jpg",
+      "day": "assets/san_francisco-day.jpg",
+      "night": "assets/san_francisco-night.jpg",
+      "north": "assets/san_francisco-north.jpg",
+      "east": "assets/san_francisco-east.jpg",
+      "south": "assets/san_francisco-south.jpg",
+      "west": "assets/san_francisco-west.jpg"
     }
   },
   {
@@ -105,13 +105,13 @@
     "lon": 24.9558,
     "bearing": 5,
     "images": {
-      "opening": "/assets/helsinki-opening.jpg",
-      "day": "/assets/helsinki-day.jpg",
-      "night": "/assets/helsinki-night.jpg",
-      "north": "/assets/helsinki-north.jpg",
-      "east": "/assets/helsinki-east.jpg",
-      "south": "/assets/helsinki-south.jpg",
-      "west": "/assets/helsinki-west.jpg"
+      "opening": "assets/helsinki-opening.jpg",
+      "day": "assets/helsinki-day.jpg",
+      "night": "assets/helsinki-night.jpg",
+      "north": "assets/helsinki-north.jpg",
+      "east": "assets/helsinki-east.jpg",
+      "south": "assets/helsinki-south.jpg",
+      "west": "assets/helsinki-west.jpg"
     }
   }
 ]
