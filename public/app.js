@@ -1,8 +1,8 @@
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 const [places, icons] = await Promise.all([
-  fetch('/assets/places.json', { cache: 'no-store' }).then(response => response.json()),
-  fetch('/assets/icons.json').then(response => response.json()),
+  fetch('assets/places.json', { cache: 'no-store' }).then(response => response.json()),
+  fetch('assets/icons.json').then(response => response.json()),
 ]);
 const iconFallbacks = {
   'arrow-right': '<path d="M5 12h14m-6-6 6 6-6 6"/>',
@@ -126,7 +126,7 @@ function selectJourney(index, focus = false) {
     if (selected && focus) button.focus();
   });
   $('#journey-panel').setAttribute('aria-labelledby', `step-${index}`);
-  $('#journey-image').src = `/assets/${item.image}.jpg`;
+  $('#journey-image').src = `assets/${item.image}.jpg`;
   $('#journey-image').alt = item.alt;
   $('#journey-caption').textContent = item.title;
   $('#stage-coordinate').textContent = item.coordinates;
@@ -150,7 +150,7 @@ const tools = {
 $$('[data-tool]').forEach(button => button.addEventListener('click', () => {
   const tool = tools[button.dataset.tool];
   $$('[data-tool]').forEach(item => item.setAttribute('aria-pressed', item === button));
-  $('#tool-image').src = `/assets/${tool.image}.jpg`;
+  $('#tool-image').src = `assets/${tool.image}.jpg`;
   $('#tool-image').alt = tool.alt;
   $('#tool-description').innerHTML = `<span data-icon="info"></span> ${tool.copy}`;
   paintIcons($('#tool-description'));

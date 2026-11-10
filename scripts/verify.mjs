@@ -5,15 +5,18 @@ import path from 'node:path';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const worker = (await import(pathToFileURL(path.join(root, 'dist/server/index.js')))).default;
-const request = (url, method = 'GET') => worker.fetch(new Request(`https://showcase.example${url}`, { method }));
+const request = (url, method = 'GET') => worker.fetch(new Request(new URL(url, 'https://showcase.example/'), { method }));
 const home = await request('/');
 assert.equal(home.status, 200);
 assert.match(home.headers.get('content-type'), /text\/html/);
 const html = await home.text();
 assert.match(html, /Planet Render 360/);
 assert.ok(home.headers.get('content-security-policy').includes("script-src 'self'"));
-for (const match of html.matchAll(/(?:src|href)="(\/[^"?#]+)"/g)) {
-  assert.equal((await request(match[1])).status, 200, `Missing HTML asset: ${match[1]}`);
+const localRefs = [...html.matchAll(/(?:src|href)="([^"?#:]+)"/g)].map(match => match[1]);
+assert.ok(localRefs.length > 10, 'Expected local asset references in the HTML');
+for (const ref of localRefs) {
+  assert.ok(!ref.startsWith('/'), `Use a relative path so the site also works under a subpath (GitHub Pages): ${ref}`);
+  assert.equal((await request(ref)).status, 200, `Missing HTML asset: ${ref}`);
 }
 const places = await (await request('/assets/places.json')).json();
 assert.equal(places.length, 6);
@@ -31,6 +34,7 @@ for (const state of ['opening', 'day', 'night', 'north', 'east', 'south', 'west'
 }
 for (const place of places) {
   for (const [state, url] of Object.entries(place.images)) {
+    assert.ok(!url.startsWith('/'), `Use a relative image path in places.json: ${url}`);
     const response = await request(url);
     assert.equal(response.status, 200, `Missing ${place.id} ${state}`);
     const bytes = new Uint8Array(await response.arrayBuffer());
